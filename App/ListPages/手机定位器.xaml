@@ -1,0 +1,23 @@
+﻿<Page
+    x:Class="App.ListPages.手机定位器"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:App.ListPages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" FontSize="50" Text="手机定位器" VerticalAlignment="Top" Height="65" Width="261" Margin="302,51,0,0"/>
+        <Grid>
+            <TextBlock HorizontalAlignment="Left" Margin="112,136,0,0" TextWrapping="Wrap" Text="你，难道还在担心手机找不着的烦恼吗？赶快试试手机定位器，一键找回丢失的手机！" VerticalAlignment="Top"/>
+            <Button Content="立即尝试！" Margin="649,134,0,0" VerticalAlignment="Top" Click="N4_start"/>
+            <ProgressRing x:Name="N4_ring" IsActive="False" HorizontalAlignment="Left" Margin="112,200,0,0" VerticalAlignment="Top"/>
+            <TextBlock x:Name="N4_ShowOpen" HorizontalAlignment="Left" Margin="137,200,0,0" TextWrapping="Wrap" Text="正在定位" VerticalAlignment="Top" FocusVisualPrimaryBrush="#FFF0FF69" Foreground="#FFE6FF00"/>
+            <Image x:Name="MainPic" HorizontalAlignment="Left" Height="100" Margin="246,210,0,0" VerticalAlignment="Top" Width="100" Source="ms-appx:///Assets/listN4ico_Maining.jpg"/>
+
+        </Grid>
+    </Grid>
+</Page>

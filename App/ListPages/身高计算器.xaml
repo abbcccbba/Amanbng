@@ -1,0 +1,21 @@
+﻿<Page
+    x:Class="App.ListPages.身高计算器"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:App.ListPages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" FontSize="50" Text="身高计算器" VerticalAlignment="Top" Height="65" Width="261" Margin="302,51,0,0"/>
+        <TextBlock HorizontalAlignment="Left" Margin="133,154,0,0" TextWrapping="Wrap" FontSize="15" Text="请输入你的身高开始计算：" VerticalAlignment="Top" RenderTransformOrigin="-1.803,-5.934"/>
+        <TextBox x:Name="StPut" HorizontalAlignment="Left" Margin="318,148,0,0" TextWrapping="Wrap" Text="单位：厘米" VerticalAlignment="Top" Width="109"/>
+        <Button Content="开始计算" Margin="467,148,0,0" VerticalAlignment="Top" Click="listN2_startcom"/>
+        <ProgressBar x:Name="progressBar" HorizontalAlignment="Left" Width="410" Height="20" IsIndeterminate="False" Margin="133,0,0,0" />
+        <TextBlock x:Name="listN2_kaPin" HorizontalAlignment="Left" Margin="133,0,0,0" TextWrapping="Wrap" FontSize="17" Text="" VerticalAlignment="Center" RenderTransformOrigin="0.37,-0.109" Width="180" FocusVisualPrimaryBrush="Black" Foreground="Red"/>
+
+    </Grid>
+</Page>

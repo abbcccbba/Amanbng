@@ -1,0 +1,35 @@
+﻿<Page
+    x:Class="App.MainPageMOM"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:App"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <NavigationView IsSettingsVisible="False" Background="#80FFFFFF" >
+            <NavigationView.MenuItems>
+                <NavigationViewItem Icon="PreviewLink" Content="超级读卡器" Tapped="Tp_N1" />
+                <NavigationViewItem Icon="Contact" Content="身高计算器" Tapped="Tp_N2" />
+                <NavigationViewItem Icon="Clock" Content="时间查看器" Tapped="Tp_N3" />
+                <NavigationViewItem Icon="CellPhone" Content="手机定位器" Tapped="Tp_N4" />
+                <NavigationViewItem Icon="Link" Content="字符拼接器" Tapped="Tp_N5"  />
+                <NavigationViewItem Icon="WebCam" Content="剪刀石头布" Tapped="Tp_N6" />
+            </NavigationView.MenuItems>
+            <Frame x:Name="ContentFrame">
+                <Grid>
+                    <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="24" Margin="77,72,0,0">
+                    牛逼工具箱
+                    </TextBlock>
+                    <TextBlock HorizontalAlignment="Left" Margin="77,123,0,0" TextWrapping="Wrap" Text="你好用户" VerticalAlignment="Top" Height="19" Width="62"/>
+                    <TextBlock x:Name="_V" HorizontalAlignment="Left" Margin="77,146,0,0" TextWrapping="Wrap" Text="我们在最新的版本中新增了什么功能？—— V" VerticalAlignment="Top"/>
+                    <TextBlock x:Name="_Vx" HorizontalAlignment="Left" Margin="77,170,0,0" TextWrapping="Wrap" Text="，怎么样？是不是很棒？！" VerticalAlignment="Top"/>
+                    <Button Content="注销登入" Margin="77,219,0,0" VerticalAlignment="Top" Click="Go_Login"/>
+                </Grid>
+            </Frame>
+        </NavigationView>
+    </Grid>
+</Page>
+
