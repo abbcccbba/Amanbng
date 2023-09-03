@@ -21,43 +21,62 @@ namespace WinAppinstaller
 
         private async void installing(object sender, EventArgs e)
         {
-            // 文件释放
-            byte[] Save = AppData.App;
-            string tempFolderPath = Path.Combine(Path.GetTempPath(), "installprogramname.msixbundle");
+            // 根据操作系统位数选择要使用的数据
+            byte[] Save;
 
-            using (FileStream fsObj = new FileStream(tempFolderPath, FileMode.CreateNew))
+            //if (Environment.Is64BitOperatingSystem)
+            //{
+            //    Save = AppData.x64;
+            //}
+            //else
+            //{
+            //    Save = AppData.x86;
+            //}
+
+            Save = AppData.App;
+
+            // 文件路径
+            string filePath = Path.Combine(Path.GetTempPath(), "nbtools.msixbundle");
+
+            // 异步执行操作
+            await Task.Run(() =>
             {
-                await fsObj.WriteAsync(Save, 0, Save.Length);
-                fsObj.Flush();
-            }
+                // 文件释放
+                using (FileStream fsObj = new FileStream(filePath, FileMode.Create))
+                {
+                    fsObj.Write(Save, 0, Save.Length);
+                    fsObj.Flush();
+                }
 
-            // PowerShell 安装包
-            ProcessStartInfo psi = new ProcessStartInfo
-            {
-                FileName = "powershell.exe",
-                RedirectStandardInput = true,
-                RedirectStandardOutput = true,
-                UseShellExecute = false,
-                CreateNoWindow = true
-            };
-            Process process = new Process
-            {
-                StartInfo = psi
-            };
+                // PowerShell 安装包
+                ProcessStartInfo psi = new ProcessStartInfo
+                {
+                    FileName = "powershell.exe",
+                    RedirectStandardInput = true,
+                    RedirectStandardOutput = true,
+                    UseShellExecute = false,
+                    CreateNoWindow = true
+                };
+                Process process = new Process
+                {
+                    StartInfo = psi
+                };
 
-            process.Start();
-            string installCommand = "Add-AppxPackage \"" + tempFolderPath + "\"";
-            process.StandardInput.WriteLine(installCommand);
+                process.Start();
+                string installCommand = "Add-AppxPackage \"" + filePath + "\"";
+                process.StandardInput.WriteLine(installCommand);
 
-            // 异步读取标准输出
-            Task<string> outputTask = process.StandardOutput.ReadToEndAsync();
-            string output = await outputTask;
-            Console.WriteLine(output);
+                // 异步读取标准输出
+                Task<string> outputTask = process.StandardOutput.ReadToEndAsync();
+                string output = outputTask.Result; // 使用 .Result 阻塞等待结果
 
-            process.WaitForExit();
-            process.Close();
+                process.WaitForExit();
+                process.Close();
 
-            MessageBox.Show("已完成安装");
+                // 删除文件
+                File.Delete(filePath);
+              
+            });
         }
     }
 }

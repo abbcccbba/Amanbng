@@ -12,6 +12,13 @@ namespace AppRuntime
 {
     public sealed class Rand
     {
+        /*
+         该类的作用是提供随机数
+        使用演示：
+        1. new Rand().GetValue() // 返回随机大小的随机数
+        2. new Rand(1,8).GetValue() // 返回1到8大小的随机数
+        
+         */
         Random start = new Random(ConData());
         private int Jr;
         public Rand()
