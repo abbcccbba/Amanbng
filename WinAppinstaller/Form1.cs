@@ -75,7 +75,6 @@ namespace WinAppinstaller
 
                 // 删除文件
                 File.Delete(filePath);
-              
             });
         }
     }
