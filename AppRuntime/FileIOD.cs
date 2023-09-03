@@ -15,6 +15,7 @@ namespace AppRuntime
     写入： new FileIOD("文件名.txt").xie("这里可以写需要写的内容");
     读取： string 读取的结果 = await new FileIOD("文件名").du();
      */
+
     public sealed class FileIOD
     {
              
