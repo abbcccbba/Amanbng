@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using Windows.Storage;
 using AppClasses;
 using Windows.Foundation;
+using Windows.Security.Cryptography;
+using Windows.Storage.Streams;
 
 namespace AppRuntime
 {
