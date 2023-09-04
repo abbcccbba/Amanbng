@@ -32,8 +32,8 @@ namespace App
         {
             this.InitializeComponent();
             //ContentFrame.Navigate(typeof(ListPages.Start)); // 未选择时，加载Start
-            string 版本 = "1.5.5.0";
-            string 介绍 = "简单改了一些东西";
+            string 版本 = "1.5.7.0";
+            string 介绍 = "新增了非常牛逼的功能";
             _Vx.Text = 介绍 + _Vx.Text;
             _V.Text = _V.Text + 版本;
         }

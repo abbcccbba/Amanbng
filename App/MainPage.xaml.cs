@@ -31,11 +31,10 @@ namespace App
         {
             this.InitializeComponent();
             AppClasses.dt.SetWindowSize(853, 480); // 设置窗口大小
-
         }
         private void StartForm_Login(object sender, RoutedEventArgs e)
         {
-            if(Account_TextBox.Text == "DeveloperTest") // 允许使用 DeveloperTest 来进行登入。关键是我没有服务器，所以这个登入功能真就像个摆设
+            if (Account_TextBox.Text == "DeveloperTest") // 允许使用 DeveloperTest 来进行登入。关键是我没有服务器，所以这个登入功能真就像个摆设
                 this.Frame.Navigate(typeof(MainPageMOM));
             else
                 new MessageBox("Error :(").e("发生了什么？一个致命的错误。");
@@ -55,6 +54,12 @@ namespace App
             //Frame.Navigate(typeof(ListWindows.PlayYuanshen), mediaPath);
         }
 
-
+        private async void LoginT_WindowsHello(object sender, RoutedEventArgs e)
+        {
+            if (await AppRuntime.Idt.WindowsHello())
+                Frame.Navigate(typeof(MainPageMOM));
+            else
+                new MessageBox("错误").e("用户终止了请求");
+        }
     }
 }
