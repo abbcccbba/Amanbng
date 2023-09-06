@@ -56,7 +56,7 @@ namespace App
 
         private async void LoginT_WindowsHello(object sender, RoutedEventArgs e)
         {
-            if (await AppRuntime.Idt.WindowsHello())
+            if (await AppRuntime.Idt.WindowsHello("验证用户登入"))
                 Frame.Navigate(typeof(MainPageMOM));
             else
                 new MessageBox("错误").e("用户终止了请求");

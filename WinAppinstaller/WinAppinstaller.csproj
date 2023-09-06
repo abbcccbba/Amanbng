@@ -115,6 +115,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <None Include="Resources\App_1.5.7.0_x86_x64.msixbundle" />
+    <None Include="Resources\App_1.6.0.0_x86_x64.msixbundle" />
     <None Include="WinAppinstaller_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>

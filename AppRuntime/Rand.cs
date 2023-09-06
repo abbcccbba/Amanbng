@@ -20,6 +20,7 @@ namespace AppRuntime
          使用演示：
         new Rand(1,8).GetValue() // 返回1到8大小的随机数
 
+
          */
         private int Return;
         public Rand(int minValue,int maxValue) 

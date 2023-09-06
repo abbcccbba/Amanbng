@@ -21,7 +21,7 @@
     <GenerateAppInstallerFile>True</GenerateAppInstallerFile>
     <PackageCertificateKeyFile>App_TemporaryKey.pfx</PackageCertificateKeyFile>
     <AppxPackageSigningTimestampDigestAlgorithm>SHA256</AppxPackageSigningTimestampDigestAlgorithm>
-    <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
+    <AppxAutoIncrementPackageRevision>False</AppxAutoIncrementPackageRevision>
     <AppxPackageDir>H:\N1\UWP_PUT</AppxPackageDir>
     <GenerateTestArtifacts>True</GenerateTestArtifacts>
     <AppxBundle>Always</AppxBundle>
@@ -142,6 +142,9 @@
     <Compile Include="ListPages\时间查看器.xaml.cs">
       <DependentUpon>时间查看器.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ListPages\电子功德器.xaml.cs">
+      <DependentUpon>电子功德器.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ListPages\超级读卡器.xaml.cs">
       <DependentUpon>超级读卡器.xaml</DependentUpon>
     </Compile>
@@ -165,6 +168,7 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\NBm.mp3" />
     <Content Include="Assets\ApPIcons\LargeTile.scale-100.png" />
     <Content Include="Assets\ApPIcons\LargeTile.scale-125.png" />
     <Content Include="Assets\ApPIcons\LargeTile.scale-150.png" />
@@ -223,6 +227,7 @@
     <Content Include="Assets\SetJIANDAO.png" />
     <Content Include="Assets\SetNone.png" />
     <Content Include="Assets\SetSHITOU.png" />
+    <Content Include="Assets\Yuer.jpg" />
     <Content Include="Properties\Default.rd.xml" />
   </ItemGroup>
   <ItemGroup>
@@ -243,6 +248,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ListPages\时间查看器.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ListPages\电子功德器.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

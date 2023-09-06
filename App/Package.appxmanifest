@@ -14,7 +14,7 @@
   <Identity
     Name="111-222-333-444-555-666"
     Publisher="CN=Lnetface"
-    Version="1.5.7.0" />
+    Version="1.6.0.0" />
 
   <mp:PhoneIdentity PhoneProductId="6e905796-99a5-40dc-b6b1-e157b31c4a46" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 

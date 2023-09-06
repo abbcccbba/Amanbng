@@ -14,7 +14,7 @@ namespace AppRuntime
 {
     public sealed class Idt
     {
-        public static IAsyncOperation<bool> WindowsHello()
+        public static IAsyncOperation<bool> WindowsHello(string HelloName)
         {
             return AsyncInfo.Run(async (cancellationToken) =>
             {
@@ -23,7 +23,7 @@ namespace AppRuntime
                     if (await KeyCredentialManager.IsSupportedAsync()) // 检查用户的设备是否支持 Windows Hello
                     {
                         // 请求用户输入PIN码
-                        KeyCredentialRetrievalResult keyCredentialRetrievalResult = await KeyCredentialManager.RequestCreateAsync("YourPinCredentialName",
+                        KeyCredentialRetrievalResult keyCredentialRetrievalResult = await KeyCredentialManager.RequestCreateAsync(HelloName,
                             KeyCredentialCreationOption.ReplaceExisting);
 
                         if (keyCredentialRetrievalResult.Status == KeyCredentialStatus.Success)

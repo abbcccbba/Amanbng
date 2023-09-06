@@ -17,6 +17,7 @@
                 <NavigationViewItem Icon="CellPhone" Content="手机定位器" Tapped="Tp_N4" />
                 <NavigationViewItem Icon="Link" Content="字符拼接器" Tapped="Tp_N5"  />
                 <NavigationViewItem Icon="WebCam" Content="剪刀石头布" Tapped="Tp_N6" />
+                <NavigationViewItem Icon="AddFriend" Content="电子功德器" Tapped="Tp_N7" />
             </NavigationView.MenuItems>
             <Frame x:Name="ContentFrame">
                 <Grid>

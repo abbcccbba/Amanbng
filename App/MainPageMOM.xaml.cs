@@ -32,10 +32,11 @@ namespace App
         {
             this.InitializeComponent();
             //ContentFrame.Navigate(typeof(ListPages.Start)); // 未选择时，加载Start
-            string 版本 = "1.5.7.0";
-            string 介绍 = "新增了非常牛逼的功能";
+            string 版本 = "1.6.0.0";
+            string 介绍 = "新增了“电子功德器”";
             _Vx.Text = 介绍 + _Vx.Text;
             _V.Text = _V.Text + 版本;
+            //ContentFrame.Navigate(typeof(ListPages.电子功德器));
         }
         /* 懂得都懂 */
         private void Tp_N1(object sender, TappedRoutedEventArgs e)
@@ -67,11 +68,16 @@ namespace App
         {
             ContentFrame.Navigate(typeof(ListPages.剪刀石头布));
         }
+        private void Tp_N7(object sender, TappedRoutedEventArgs e)
+        {
+            ContentFrame.Navigate(typeof(ListPages.电子功德器));
+        }
 
         private void Go_Login(object sender, RoutedEventArgs e)
         {
             //Frame frame = Window.Current.Content as Frame;
             Frame.GoBack();
         }
+        
     }   
 }
