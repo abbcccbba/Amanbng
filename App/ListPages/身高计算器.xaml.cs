@@ -19,20 +19,20 @@ using AppClasses;
 
 namespace App.ListPages
 {
-    /// <summary>
-    /// 可用于自身或导航至 Frame 内部的空白页。
-    /// </summary>
     public sealed partial class 身高计算器 : Page
     {
         public 身高计算器()
         {
             this.InitializeComponent();
-            listN2_kaPin.Visibility = Visibility.Collapsed;
         }
-        private async void listN2_startcom(object sender, RoutedEventArgs e)
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            ShowValue.Visibility = Visibility.Collapsed; // 初始化不显示结果
+        }
+        private async void start(object sender, RoutedEventArgs e)
         {
             /*代码是chatgpt写的就别问看不看得懂了*/
-            listN2_kaPin.Visibility = Visibility.Collapsed;
+            ShowValue.Visibility = Visibility.Collapsed;
             progressBar.Visibility = Visibility.Visible;
             progressBar.Maximum = 100;
             progressBar.Value = 0;
@@ -47,8 +47,8 @@ namespace App.ListPages
             }
 
             progressBar.Visibility = Visibility.Collapsed;
-            listN2_kaPin.Visibility = Visibility.Visible;
-            listN2_kaPin.Text = "你的身高是：" + StPut.Text;
+            ShowValue.Visibility = Visibility.Visible;
+            ShowValue.Text = "你的身高是：" + StPut.Text;
         }
     }
 }

@@ -18,16 +18,16 @@ using Windows.UI.Xaml.Navigation;
 
 namespace App.ListPages
 {
-    /// <summary>
-    /// 可用于自身或导航至 Frame 内部的空白页。
-    /// </summary>
     public sealed partial class 时间查看器 : Page
     {
         public 时间查看器()
         {
             this.InitializeComponent();
         }
-        private void listN3chu_Lanu(object sender, SelectionChangedEventArgs e)
+        /// <summary>
+        /// 处理用户选择语言设置
+        /// </summary>
+        private void OpenLanguage(object sender, SelectionChangedEventArgs e)
         {
             ComboBox comboBox = (ComboBox)sender;
 
@@ -58,8 +58,10 @@ namespace App.ListPages
                 }
             }
         }
-
-        private void N3_MainButt_ShowTime(object sender, RoutedEventArgs e) // 垃圾命名懒得改了
+        /// <summary>
+        /// 显示时间
+        /// </summary>
+        private void ViewTime(object sender, RoutedEventArgs e) // 垃圾命名懒得改了
         {
             string url = "https://www.baidu.com/s?wd=%E7%8E%B0%E5%9C%A8%E5%87%A0%E7%82%B9%E4%BA%86";
             new startLinker(url); //  startLinker 类负责打开一个链接，因为他是一个类，所以代码前面要加上new

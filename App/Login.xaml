@@ -7,8 +7,17 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
-    <Grid>
-
+    <Grid FocusVisualPrimaryBrush="#FFFFFDFD">
+        <TextBlock HorizontalAlignment="Left" Margin="62,56,0,0" TextWrapping="Wrap" Text="牛逼工具箱" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="62,80,0,0" TextWrapping="Wrap" Text="警告：若要使用牛逼工具箱，请先登入" VerticalAlignment="Top" FocusVisualPrimaryBrush="White" FocusVisualSecondaryBrush="#99FFFFFF" Foreground="#FFFF0808" SelectionHighlightColor="#FF0090FF"/>
+        <TextBlock HorizontalAlignment="Left" Margin="39,159,0,0" TextWrapping="Wrap" Text="账号" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="39,198,0,0" TextWrapping="Wrap" Text="密码" VerticalAlignment="Top"/>
+        <TextBox x:Name="Account_TextBox" Margin="97,159,580,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="34" Width="176" RenderTransformOrigin="0.496,1.583" Foreground="#FF0090FF"/>
+        <PasswordBox HorizontalAlignment="Left" Margin="97,198,0,0" VerticalAlignment="Top" Height="37" Width="176" PasswordChar="#"/>
+        <Button Content="立即登入！" Margin="185,240,0,0" VerticalAlignment="Top" Click="StartForm_Login"/>
+        <Button Content="使用特权一键跳过登入" Margin="693,448,0,0" VerticalAlignment="Top" RenderTransformOrigin="7.22,4.885" Click="StartForm_New"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,455,0,0" TextWrapping="Wrap" Text="科技改变生活" VerticalAlignment="Top" RenderTransformOrigin="0.257,0.918"/>
+        <Button Content="体验内测" Margin="456,448,0,0" VerticalAlignment="Top" Click="Play_Yuanshen"/>
+        <Button Content="Windows Hello 登入" Margin="537,448,0,0" VerticalAlignment="Top" Width="151" Click="LoginT_WindowsHello"/>
     </Grid>
 </Page>

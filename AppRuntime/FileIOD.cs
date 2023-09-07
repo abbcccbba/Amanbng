@@ -11,21 +11,23 @@ using Windows.Storage.Streams;
 
 namespace AppRuntime
 {
-    /*
-     FileIOD类是一个能够简单的实现文件读写的类
-    演示：
-    写入： new FileIOD("文件名.txt").xie("这里可以写需要写的内容");
-    读取： string 读取的结果 = await new FileIOD("文件名").du();
-     */
-
+    /// <summary>
+    /// 提供了一个方便的文件读写的方法
+    /// </summary>
     public sealed class FileIOD
     {
              
         private string fileName;
+
+        /// <param name="FileName">需要读写的文件路径</param>
         public FileIOD(string FileName)
         {
             fileName = FileName;
         }
+        /// <summary>
+        /// 模式为写文件
+        /// </summary>
+        /// <param name="Content">写入文件的string变量</param>
         public async void xie(string Content)
         {
             try
@@ -39,6 +41,10 @@ namespace AppRuntime
                 new MessageBox("文件流错误").e("代码：" + ex.Message);
             }
         }
+        /// <summary>
+        /// 模式为读文件
+        /// </summary>
+        /// <returns>返回读取到的文件string值</returns>
         public IAsyncOperation<string> du()
         {
             return duAsync().AsAsyncOperation();

@@ -9,20 +9,23 @@ using System;
 
 namespace AppClasses
 { 
-    /*
-     PlayM类能让开发者简单的实现视频播放以及音频播放的功能
-    构造函数的传入参数是媒体文件地址
-    V、A分别代表以视频模式播放和以音乐模式播放
-    代码演示：
-    new PlayM("ms-appx:///Assets/MyMusic.mp3").A();
-     */
+    /// <summary>
+    /// 提供了一个简单的播放音频或视频的方法
+    /// </summary>
     public class PlayM
     {
         string mediaPath;
+        /// <summary>
+        /// 使用前设置媒体路径
+        /// </summary>
+        /// <param name="MediaPath">媒体路径（string）</param>
         public PlayM(string MediaPath) 
         {
             mediaPath = MediaPath;
         }
+        /// <summary>
+        /// 将会以全屏模式播放视频
+        /// </summary>
         public void V() // 播放视频
         {
             Frame frame = Window.Current.Content as Frame;
@@ -31,6 +34,9 @@ namespace AppClasses
             Window.Current.Content = frame;
             Window.Current.Activate();
         }
+        /// <summary>
+        /// 将会后台静默播放音频
+        /// </summary>
         public async void A() // 播放音乐
         {
             MediaPlayer mediaPlayer = new MediaPlayer();

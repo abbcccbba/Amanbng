@@ -19,32 +19,27 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-//using Windows.Media.Playback;
-
-
-// https://go.microsoft.com/fwlink/?LinkId=234238 上介绍了“空白页”项模板
-
 namespace App.ListPages
 {
-    /// <summary>
-    /// 可用于自身或导航至 Frame 内部的空白页。
-    /// </summary>
     public sealed partial class 超级读卡器 : Page
     {
         public 超级读卡器()
         {
-            this.InitializeComponent();
-            listN1_kaPin.Visibility = Visibility.Collapsed;
+            this.InitializeComponent();     
         }
-
-        private void ListN1_start(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// 设置点击按钮后显示的问题默认显示属性为隐藏
+        /// </summary>
+        protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            /* 
-             该函数的作用是播放声音，并显示隐藏的文字
-             播放声音：这个就不必过多介绍了
-             显示文字：实际上文字已经在xaml设计器里显示了，但是在超级读卡器类的构造函数里设为了隐藏值，但按钮触发时，取消隐藏
-             */
-            listN1_kaPin.Visibility = Visibility.Visible;
+            ShowKa.Visibility = Visibility.Collapsed;
+        }
+        /// <summary>
+        /// 当用户点击“将卡片放在按钮上面后点击开始读卡”时里面的代码开始执行
+        /// </summary>
+        private void start(object sender, RoutedEventArgs e)
+        {
+            ShowKa.Visibility = Visibility.Visible;
             new PlayM("ms-appx:///Assets/N1.mp3").A();
         }
     }

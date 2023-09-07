@@ -13,16 +13,17 @@ using Windows.UI.Xaml;
 
 namespace AppRuntime
 {
+    /// <summary>
+    /// 提供了一个简单的随机数获取方法 参考：new Rand(1,5).GetValue()
+    /// </summary>
     public sealed class Rand
     {
-        /*
-         该类提供随机数
-         使用演示：
-        new Rand(1,8).GetValue() // 返回1到8大小的随机数
-
-
-         */
         private int Return;
+        /// <summary>
+        /// 定义随机数范围
+        /// </summary>
+        /// <param name="minValue">随机数最小值</param>
+        /// <param name="maxValue">随机数最大值</param>
         public Rand(int minValue,int maxValue) 
         {
             IBuffer buffer = CryptographicBuffer.GenerateRandom(sizeof(int));
@@ -31,6 +32,10 @@ namespace AppRuntime
             int result = (int)Math.Floor((double)(randomNumber % (maxValue - minValue + 1) + minValue));
             Return = result;
         }  
+        /// <summary>
+        /// 获取随机数
+        /// </summary>
+        /// <returns>返回随机数</returns>
         public int GetValue() { return Return; }
     }
 }

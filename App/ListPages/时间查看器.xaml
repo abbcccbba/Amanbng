@@ -9,14 +9,14 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-
-        <TextBlock x:Name="N3_MainText" HorizontalAlignment="Left" TextWrapping="Wrap" FontSize="50" Text="时间查看器" VerticalAlignment="Top" Height="65" Width="363" Margin="302,51,0,0"/>
-        <Button x:Name="N3_MainButt" Content="查看时间" HorizontalAlignment="Center" Height="177" Width="380" Margin="0,213,0,0" VerticalAlignment="Top" Click="N3_MainButt_ShowTime"/>
-        <ComboBox RenderTransformOrigin="0.495,0.63" Margin="652,30,0,0" Width="145" PlaceholderText="语言" SelectionChanged="listN3chu_Lanu">
+        <!--时间查看器--><TextBlock x:Name="N3_MainText" HorizontalAlignment="Left" TextWrapping="Wrap" FontSize="50" Text="时间查看器" VerticalAlignment="Top" Height="65" Width="363" Margin="302,51,0,0"/>
+        <!--查看时间--><Button x:Name="N3_MainButt" Content="查看时间" HorizontalAlignment="Center" Height="177" Width="380" Margin="0,213,0,0" VerticalAlignment="Top" Click="ViewTime"/>
+        <ComboBox RenderTransformOrigin="0.495,0.63" Margin="652,30,0,0" Width="145" PlaceholderText="语言" SelectionChanged="OpenLanguage">
             <ComboBoxItem Content="中文（简体）"/>
             <ComboBoxItem Content="English"/>
             <ComboBoxItem Content="日本語"/>
             <ComboBoxItem Content="한국인"/>
+            <!--提供了一些语言选项-->
         </ComboBox>
     </Grid>
 </Page>

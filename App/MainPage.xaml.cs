@@ -14,10 +14,11 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-
+using Windows.Storage;
 using AppClasses;
 using Windows.Media.Playback;
 using Windows.Devices.Lights;
+using System.Threading.Tasks;
 // https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x804 上介绍了“空白页”项模板
 
 namespace App
@@ -30,36 +31,40 @@ namespace App
         public MainPage()
         {
             this.InitializeComponent();
-            AppClasses.dt.SetWindowSize(853, 480); // 设置窗口大小
+            //AppClasses.dt.SetWindowSize(853, 480); // 设置窗口大小
+            ApplicationView.GetForCurrentView().SetPreferredMinSize(new Size(853, 480));
+            ApplicationView.GetForCurrentView().TryResizeView(new Size(853, 480));
+            VarFile();
+            ToLogin();
         }
-        private void StartForm_Login(object sender, RoutedEventArgs e)
+        private async void VarFile()
         {
-            if (Account_TextBox.Text == "DeveloperTest") // 允许使用 DeveloperTest 来进行登入。关键是我没有服务器，所以这个登入功能真就像个摆设
-                this.Frame.Navigate(typeof(MainPageMOM));
-            else
-                new MessageBox("Error :(").e("发生了什么？一个致命的错误。");
+            try
+            {
+                StorageFolder localFolder = ApplicationData.Current.LocalFolder;
+                StorageFile configFile = await localFolder.GetFileAsync("One.iso");
+                if(await FileIO.ReadTextAsync(configFile) != "2bNe3kw")
+                    Process.GetCurrentProcess().Kill();
+            }
+            catch (System.IO.IOException)
+            {
+                StorageFolder localFolder = ApplicationData.Current.LocalFolder;
+                StorageFile configFile = await localFolder.CreateFileAsync("One.iso", CreationCollisionOption.ReplaceExisting);
+                await FileIO.WriteTextAsync(configFile, "2bNe3kw");
+                IsOne();
+            }
         }
-
-        private void StartForm_New(object sender, RoutedEventArgs e)
+        private async void ToLogin()
         {
-
-            Frame.Navigate(typeof(MainPageMOM));
+            await Task.Delay(20);
+            Frame.Navigate(typeof(Login));
         }
-
-        private void Play_Yuanshen(object sender, RoutedEventArgs e)
-        { 
-            // 原神，启动！！！
-            string mediaPath = "ms-appx:///Assets/iiilab_video_2.mp4";
-            new PlayM(mediaPath).V();
-            //Frame.Navigate(typeof(ListWindows.PlayYuanshen), mediaPath);
-        }
-
-        private async void LoginT_WindowsHello(object sender, RoutedEventArgs e)
+        private void IsOne()
         {
-            if (await AppRuntime.Idt.WindowsHello("验证用户登入"))
-                Frame.Navigate(typeof(MainPageMOM));
-            else
-                new MessageBox("错误").e("用户终止了请求");
-        }
+            textBlock.Text = "正在为初次打开进行准备工作";
+            Mainringing.IsActive = true;
+            /*这里写当应用初次打开时的处理代码*/
+
+         }
     }
 }

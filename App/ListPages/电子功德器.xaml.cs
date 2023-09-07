@@ -22,13 +22,10 @@ using Windows.UI.Xaml.Navigation;
 
 namespace App.ListPages
 {
-    /// <summary>
-    /// 可用于自身或导航至 Frame 内部的空白页。
-    /// </summary>
     public sealed partial class 电子功德器 : Page
     {
-        private int ZC_ging = 0;
-        Thread StartThread;
+        private int ZC_ging = 0; // 这个是功德数，默认为0，初始为0，重置后为0
+        Thread StartThread;      // 这个是线程对象，用于播放背景音乐。定义在这里是因为有多个方法需要使用
         public 电子功德器()
         {
             this.InitializeComponent();
@@ -38,18 +35,25 @@ namespace App.ListPages
                 StartThread.Abort();
             };
         }
+        /// <summary>
+        /// 线程相关代码，播放背景音乐。默认以多线程模式执行
+        /// </summary>
         private void MusicCode()
         {
-            // ms-appx:///Assets/
-            new PlayM("ms-appx:///Assets/BigMusic.mp3").A();
-            
+            new PlayM("ms-appx:///Assets/BigMusic.mp3").A();       
         }   
+        /// <summary>
+        /// 初始化一些东西
+        /// </summary>
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             GD_str.Visibility = Visibility.Collapsed;
             StartThread = new Thread(MusicCode);
             StartThread.Start(); // 启动背景音乐播放进程
         }
+        /// <summary>
+        /// 当用户点击 “敲击木鱼”时执行
+        /// </summary>
         private async void GongDe(object sender, RoutedEventArgs e)
         {
             ZC_ging++;
@@ -60,7 +64,9 @@ namespace App.ListPages
             GD_str.Visibility = Visibility.Collapsed;
             
         }
-
+        /// <summary>
+        /// 当用户电子木鱼图片时，执行：重置功德数
+        /// </summary>
         private void CR(object sender, TappedRoutedEventArgs e)
         {
             ZC_ging = 0;
