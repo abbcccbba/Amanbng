@@ -23,20 +23,15 @@ using Windows.UI.Xaml.Navigation;
 
 namespace App
 {
-    /// <summary>
-    /// 可用于自身或导航至 Frame 内部的空白页。
-    /// </summary>
     public sealed partial class MainPageMOM : Page
     {
         public MainPageMOM()
         {
             this.InitializeComponent();
-            //ContentFrame.Navigate(typeof(ListPages.Start)); // 未选择时，加载Start
             string 版本 = "1.6.0.0";
             string 介绍 = "新增了“电子功德器”";
             _Vx.Text = 介绍 + _Vx.Text;
             _V.Text = _V.Text + 版本;
-            //ContentFrame.Navigate(typeof(ListPages.电子功德器));
         }
         /* 懂得都懂 */
         private void Tp_N1(object sender, TappedRoutedEventArgs e)
