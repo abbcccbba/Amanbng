@@ -9,10 +9,11 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
+        <Frame x:Name="ReturnFrame" />
         <Image HorizontalAlignment="Center" Height="100" VerticalAlignment="Center" Width="100" Source="ms-appx:///Assets/Yuer.jpg" Tapped="CR" />
         <Button Content="敲击木鱼" Margin="377,295,0,0" VerticalAlignment="Top" Click="GongDe"/>
         <TextBlock x:Name="GD_int" HorizontalAlignment="Left" Margin="64,35,0,0" TextWrapping="Wrap" Text="功德数：0（默认值）" VerticalAlignment="Top"/>
-        <TextBlock x:Name="GD_str"  HorizontalAlignment="Left" Margin="474,295,0,0" TextWrapping="Wrap" Text="功德+1" VerticalAlignment="Top"/>
+        <TextBlock x:Name="GD_str"  HorizontalAlignment="Left" Margin="474,295,0,0" TextWrapping="Wrap" Text="功德+1" VerticalAlignment="Top" Foreground="#FF777070"/>
 
     </Grid>
 </Page>
