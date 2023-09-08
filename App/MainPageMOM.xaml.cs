@@ -28,8 +28,8 @@ namespace App
         public MainPageMOM()
         {
             this.InitializeComponent();
-            string 版本 = "1.6.0.0";
-            string 介绍 = "新增了“电子功德器”";
+            string 版本 = "1.6.2.0";
+            string 介绍 = "优化了代码";
             _Vx.Text = 介绍 + _Vx.Text;
             _V.Text = _V.Text + 版本;
         }

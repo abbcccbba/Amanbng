@@ -19,6 +19,8 @@ using AppClasses;
 using Windows.Media.Playback;
 using Windows.Devices.Lights;
 using System.Threading.Tasks;
+using Windows.Web.Http;
+using Windows.Storage.Streams;
 // https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x804 上介绍了“空白页”项模板
 
 namespace App
@@ -41,30 +43,27 @@ namespace App
         {
             try
             {
-                StorageFolder localFolder = ApplicationData.Current.LocalFolder;
-                StorageFile configFile = await localFolder.GetFileAsync("One.iso");
+                StorageFile configFile = await (ApplicationData.Current.LocalFolder).GetFileAsync("One.iso");
                 if(await FileIO.ReadTextAsync(configFile) != "2bNe3kw")
                     Process.GetCurrentProcess().Kill();
             }
             catch (System.IO.IOException)
             {
-                StorageFolder localFolder = ApplicationData.Current.LocalFolder;
-                StorageFile configFile = await localFolder.CreateFileAsync("One.iso", CreationCollisionOption.ReplaceExisting);
+                StorageFile configFile = await (ApplicationData.Current.LocalFolder).CreateFileAsync("One.iso", CreationCollisionOption.ReplaceExisting);
                 await FileIO.WriteTextAsync(configFile, "2bNe3kw");
                 IsOne();
             }
         }
-        private async void ToLogin()
+        private void ToLogin()
         {
-            await Task.Delay(20);
             Frame.Navigate(typeof(Login));
         }
-        private void IsOne()
+        private async void IsOne()
         {
             textBlock.Text = "正在为初次打开进行准备工作";
             Mainringing.IsActive = true;
             /*这里写当应用初次打开时的处理代码*/
-
-         }
+            
+        }
     }
 }

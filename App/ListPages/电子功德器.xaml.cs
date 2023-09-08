@@ -31,24 +31,19 @@ namespace App.ListPages
             this.InitializeComponent();
             this.ReturnFrame.Navigated += (sender, e) =>
             {
-                // 这里的代码负责结束音乐播放
                 StartThread.Abort();
             };
-        }
-        /// <summary>
-        /// 线程相关代码，播放背景音乐。默认以多线程模式执行
-        /// </summary>
-        private void MusicCode()
-        {
-            new PlayM("ms-appx:///Assets/BigMusic.mp3").A();       
-        }   
+        }  
         /// <summary>
         /// 初始化一些东西
         /// </summary>
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             GD_str.Visibility = Visibility.Collapsed;
-            StartThread = new Thread(MusicCode);
+            StartThread = new Thread(() =>
+            {
+                new PlayM("ms-appx:///Assets/BigMusic.mp3").A();
+            });
             StartThread.Start(); // 启动背景音乐播放进程
         }
         /// <summary>
