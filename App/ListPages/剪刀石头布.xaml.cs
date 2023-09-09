@@ -40,7 +40,6 @@ namespace App.ListPages
         /// </summary>
         protected async override void OnNavigatedTo(NavigationEventArgs e)
         {
-            Action m = () => { new MessageBox("错误").e("无法调用解除函数"); } ;
             /* 对话框控件定义 */
             ComboBox difficulty = new ComboBox() { PlaceholderText = "在这里选择" };
             List<string> items = new List<string> // 定义了下拉选择框里的内容（列表）
@@ -55,7 +54,6 @@ namespace App.ListPages
                 comboBoxItem.Content = item;
                 difficulty.Items.Add(comboBoxItem);
             }
-            
             difficulty.SelectionChanged += (sender, args) => // 事件相关代码 *chatgpt写的
             {
                 ComboBox comboBox = sender as ComboBox;
@@ -65,72 +63,36 @@ namespace App.ListPages
                 {
                     selectedOption = selectedItem.Content.ToString();
 
-                    // 根据不同的选项执行不同的函数
-                    if (selectedOption == "简单") { Action ut1 = () => { }; ut1(); m = async () =>
+                    if (selectedOption == "简单") 
                     {
-                        x1.IsEnabled = false;
-                        x2.IsEnabled = false;
-                        x3.IsEnabled = false;
-                        await Task.Delay(3000); 
-                        x1.IsEnabled = true;
-                        x2.IsEnabled = true;
-                        x3.IsEnabled = true;
-                    };
+
                     }
                         
-                    if (selectedOption == "普通") { Action ut2 = () => 
+                    if (selectedOption == "普通") 
                     {
-                        switch (AICH)
+                        switch(AICH)
                         {
-                            case 0: // 如果AI出了剪刀 那就不允许玩家出石头和剪刀
-                                {
-                                    x1.IsEnabled = false;
-                                    x2.IsEnabled = false;
-                                    break;
-                                }
-                            case 1: // 如果AI出了石头 那就不允许玩家出石头和布
-                                {
-                                    x2.IsEnabled = false;
-                                    x3.IsEnabled = false;
-                                    break;
-                                }
-                            case 2: // 如果AI出了布 那就不允许玩家出剪刀和布
-                                {
-                                    x1.IsEnabled = false;
-                                    x3.IsEnabled = false;
-                                    break;
-                                }
-                        }
-                    }; ut2(); m = async () =>
-                    {
-                        x1.IsEnabled = false;
-                        x2.IsEnabled = false;
-                        x3.IsEnabled = false;
-                        await Task.Delay(3000); // 延迟显示AI选择，让玩家错以为真的在做计算
-                        switch (AICH) {
                             case 0:
-                                x3.IsEnabled = true;break;
+                                x1.IsEnabled = false;
+                                x2.IsEnabled = false;
+                                break;
                             case 1:
-                                x1.IsEnabled = true;break;
+                                x2.IsEnabled= false;
+                                x3.IsEnabled = false; 
+                                break;
                             case 2:
-                                x2.IsEnabled = true;break;
+                                x1.IsEnabled= false;
+                                x3.IsEnabled= false;
+                                break;
                         }
-                    };
                     }
                         
-                    if (selectedOption == "困难") { Action  ut3 = async () => 
+                    if (selectedOption == "困难") 
                     {
-                        x1.IsEnabled = false;
-                        x2.IsEnabled = false;
-                        x3.IsEnabled = false;
-                        await Task.Delay(3000); // 等待一会，让用户不要过早的遗憾
-                                                // 禁用所有按钮并告诉用户你输了
-                        new MessageBox("结果").e("不好意思你输了");
-                        new MessageBox("警告").e("由于难度限制，你无法选择任何内容。将自动执行失败代码");
-                    }; ut3(); }
+                    
+                    }
                         
                 }
-                else new MessageBox("Error :(").e("请选择一个值");
             };
             UIElement[] Kongs = // 定义了消息框里都有啥。difficulty 就是那个下拉选择框
             {
@@ -138,7 +100,6 @@ namespace App.ListPages
                 difficulty
             };
             Kongs = await new MessageBox("我们需要一些信息").m("下一步", Kongs); // 显示消息框
-            m();
             /* 为如果AI做出的不同选择写相应的代码 */
             switch (AICH)
             {

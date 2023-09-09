@@ -40,11 +40,6 @@ namespace App.ListPages
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             GD_str.Visibility = Visibility.Collapsed;
-            StartThread = new Thread(() =>
-            {
-                new PlayM("ms-appx:///Assets/BigMusic.mp3").A();
-            });
-            StartThread.Start(); // 启动背景音乐播放进程
         }
         /// <summary>
         /// 当用户点击 “敲击木鱼”时执行

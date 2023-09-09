@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Management;
 using Windows.System;
 using Windows.UI.Core;
 using Windows.UI.Xaml;
@@ -28,10 +29,11 @@ namespace App
         public MainPageMOM()
         {
             this.InitializeComponent();
-            string 版本 = "1.6.3.0";
-            string 介绍 = "修bug";
-            _Vx.Text = 介绍 + _Vx.Text;
-            _V.Text = _V.Text + 版本;
+        }
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            MediaPage.Play();
+            MediaPage.Stretch = Stretch.UniformToFill;
         }
         /* 懂得都懂 */
         private void Tp_N1(object sender, TappedRoutedEventArgs e)
@@ -67,12 +69,5 @@ namespace App
         {
             ContentFrame.Navigate(typeof(ListPages.电子功德器));
         }
-
-        private void Go_Login(object sender, RoutedEventArgs e)
-        {
-            //Frame frame = Window.Current.Content as Frame;
-            Frame.GoBack();
-        }
-        
     }   
 }

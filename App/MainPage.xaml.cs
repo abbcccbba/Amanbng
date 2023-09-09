@@ -38,6 +38,7 @@ namespace App
             ApplicationView.GetForCurrentView().SetPreferredMinSize(new Windows.Foundation.Size(853, 480));
             ApplicationView.GetForCurrentView().TryResizeView(new Windows.Foundation.Size(853, 480));
             VarFile();
+            
         }
         private async void VarFile()
         {

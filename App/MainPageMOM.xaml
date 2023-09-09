@@ -9,7 +9,7 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <NavigationView IsSettingsVisible="False" Background="#80FFFFFF" >
+        <NavigationView x:Name="CBL"  IsSettingsVisible="False" Background="Black" >
             <NavigationView.MenuItems>
                 <NavigationViewItem Icon="PreviewLink" Content="超级读卡器" Tapped="Tp_N1" />
                 <NavigationViewItem Icon="Contact" Content="身高计算器" Tapped="Tp_N2" />
@@ -21,13 +21,13 @@
             </NavigationView.MenuItems>
             <Frame x:Name="ContentFrame">
                 <Grid>
-                    <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="24" Margin="77,72,0,0">
-                    牛逼工具箱
-                    </TextBlock>
-                    <TextBlock HorizontalAlignment="Left" Margin="77,123,0,0" TextWrapping="Wrap" Text="你好用户" VerticalAlignment="Top" Height="19" Width="62"/>
-                    <TextBlock x:Name="_V" HorizontalAlignment="Left" Margin="77,146,0,0" TextWrapping="Wrap" Text="我们在最新的版本中新增了什么功能？—— V" VerticalAlignment="Top"/>
-                    <TextBlock x:Name="_Vx" HorizontalAlignment="Left" Margin="77,170,0,0" TextWrapping="Wrap" Text="，怎么样？是不是很棒？！" VerticalAlignment="Top"/>
-                    <Button Content="注销登入" Margin="77,219,0,0" VerticalAlignment="Top" Click="Go_Login"/>
+                    <Grid>
+                        <MediaElement x:Name="MediaPage" AutoPlay="True" IsLooping="True" Source="ms-appx:///Assets/v6.mp4"/>
+                        <TextBlock HorizontalAlignment="Left" Margin="121,83,0,0" TextWrapping="Wrap" Text="nb tools" FontSize="230" VerticalAlignment="Top" FontFamily="ms-appx:///Assets/Hello.otf#Holland" Foreground="#AAD8E6" Width="626" Height="325" />
+                        <TextBlock x:Name="TT" Text="现在，" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="White" FontSize="28" FontWeight="Bold" Margin="49,127,0,0" Height="45" Width="287" RenderTransformOrigin="0.5,0.5" />
+                        <TextBlock x:Name="TM" Text="重新定义“工具箱”" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="White" FontSize="28" FontWeight="Bold" Margin="49,169,0,0" Height="45" Width="358" RenderTransformOrigin="0.5,0.5" />
+
+                    </Grid>
                 </Grid>
             </Frame>
         </NavigationView>

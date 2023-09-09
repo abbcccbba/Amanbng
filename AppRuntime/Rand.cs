@@ -18,7 +18,7 @@ namespace AppRuntime
     /// </summary>
     public sealed class Rand
     {
-        private int Return;
+        private uint Return;
         /// <summary>
         /// 定义随机数范围
         /// </summary>
@@ -26,16 +26,12 @@ namespace AppRuntime
         /// <param name="maxValue">随机数最大值</param>
         public Rand(int minValue,int maxValue) 
         {
-            IBuffer buffer = CryptographicBuffer.GenerateRandom(sizeof(int));
-            byte[] randomBytes = buffer.ToArray();
-            int randomNumber = BitConverter.ToInt32(randomBytes, 0);
-            int result = (int)Math.Floor((double)(randomNumber % (maxValue - minValue + 1) + minValue));
-            Return = result;
+            Return = (CryptographicBuffer.GenerateRandomNumber() % (uint)(maxValue+1)) + (uint)minValue;
         }  
         /// <summary>
         /// 获取随机数
         /// </summary>
         /// <returns>返回随机数</returns>
-        public int GetValue() { return Return; }
+        public uint GetValue() { return Return; }
     }
 }
