@@ -33,5 +33,6 @@ namespace AppRuntime
         /// </summary>
         /// <returns>返回随机数</returns>
         public uint GetValue() { return Return; }
+
     }
 }
