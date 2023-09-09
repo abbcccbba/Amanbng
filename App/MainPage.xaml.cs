@@ -21,6 +21,7 @@ using Windows.Devices.Lights;
 using System.Threading.Tasks;
 using Windows.Web.Http;
 using Windows.Storage.Streams;
+using System.Drawing;
 // https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x804 上介绍了“空白页”项模板
 
 namespace App
@@ -34,18 +35,21 @@ namespace App
         {
             this.InitializeComponent();
             //AppClasses.dt.SetWindowSize(853, 480); // 设置窗口大小
-            ApplicationView.GetForCurrentView().SetPreferredMinSize(new Size(853, 480));
-            ApplicationView.GetForCurrentView().TryResizeView(new Size(853, 480));
+            ApplicationView.GetForCurrentView().SetPreferredMinSize(new Windows.Foundation.Size(853, 480));
+            ApplicationView.GetForCurrentView().TryResizeView(new Windows.Foundation.Size(853, 480));
             VarFile();
-            ToLogin();
         }
         private async void VarFile()
         {
             try
             {
                 StorageFile configFile = await (ApplicationData.Current.LocalFolder).GetFileAsync("One.iso");
-                if(await FileIO.ReadTextAsync(configFile) != "2bNe3kw")
-                    Process.GetCurrentProcess().Kill();
+                if(await FileIO.ReadTextAsync(configFile) == "2bNe3kw")
+                    Frame.Navigate(typeof(Login));
+                else
+                {
+                    textBlock.Text = "无法完成验证";
+                }
             }
             catch (System.IO.IOException)
             {
@@ -54,16 +58,12 @@ namespace App
                 IsOne();
             }
         }
-        private void ToLogin()
-        {
-            Frame.Navigate(typeof(Login));
-        }
         private async void IsOne()
         {
             textBlock.Text = "正在为初次打开进行准备工作";
             Mainringing.IsActive = true;
             /*这里写当应用初次打开时的处理代码*/
-            
+            Frame.Navigate(typeof(Login));
         }
     }
 }

@@ -8,7 +8,7 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
     <Grid FocusVisualPrimaryBrush="#FFFFFDFD">
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Center" TextWrapping="Wrap" Text="请稍后" VerticalAlignment="Center"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Center" TextWrapping="Wrap" Text="请稍后" VerticalAlignment="Center" Foreground="Black"/>
         <ProgressRing x:Name="Mainringing" HorizontalAlignment="Left" Margin="300,230,0,0" VerticalAlignment="Top"/>
 
     </Grid>
