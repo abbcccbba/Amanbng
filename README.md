@@ -1,4 +1,5 @@
 # NBTOOLS
+**警告，该版本为SpadaOS特供版**
 欢迎来到牛逼工具箱的GitHub仓库（英文名：nbtools）
 
 本软件受B站UP[@奥文同学](https://space.bilibili.com/452157792)视频的启发而编写
