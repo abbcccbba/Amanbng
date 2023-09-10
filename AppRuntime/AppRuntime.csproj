@@ -131,12 +131,6 @@
       <Version>6.2.14</Version>
     </PackageReference>
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\AppClasses\AppClasses.csproj">
-      <Project>{8862cde6-78eb-4802-bb0b-60c69b81cdbe}</Project>
-      <Name>AppClasses</Name>
-    </ProjectReference>
-  </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
