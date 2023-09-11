@@ -1,16 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
-using Windows.ApplicationModel.Contacts.DataProvider;
-using Windows.Security.Cryptography;
-using Windows.Storage.Streams;
-using Windows.UI.Composition;
-using Windows.UI.Xaml;
-
 namespace AppRuntime
 {
     /// <summary>
@@ -26,7 +16,7 @@ namespace AppRuntime
         /// <param name="maxValue">随机数最大值</param>
         public Rand(int minValue,int maxValue) 
         {
-            Return = (CryptographicBuffer.GenerateRandomNumber() % (uint)(maxValue+1)) + (uint)minValue;
+            Return = (Windows.Security.Cryptography.CryptographicBuffer.GenerateRandomNumber() % (uint)(maxValue+1)) + (uint)minValue;
         }  
         /// <summary>
         /// 获取随机数

@@ -87,10 +87,13 @@ namespace App
             this.InitializeComponent();
             //AppClasses.dt.SetWindowSize(853, 480); // 设置窗口大小
             ApplicationView.GetForCurrentView().SetPreferredMinSize(new Windows.Foundation.Size(853, 480));
-            ApplicationView.GetForCurrentView().TryResizeView(new Windows.Foundation.Size(853, 480));
-            VarFile();
-            
+            ApplicationView.GetForCurrentView().TryResizeView(new Windows.Foundation.Size(853, 480)); 
         }
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            VarFile();
+        }
+
         private async void VarFile()
         {
             try
@@ -115,6 +118,7 @@ namespace App
             textBlock.Text = "正在为初次打开进行准备工作";
             Mainringing.IsActive = true;
             /*这里写当应用初次打开时的处理代码*/
+            await Task.Delay(10000);
             Frame.Navigate(typeof(Login));
         }
     }
