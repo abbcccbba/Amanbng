@@ -118,7 +118,7 @@ namespace App
             textBlock.Text = "正在为初次打开进行准备工作";
             Mainringing.IsActive = true;
             /*这里写当应用初次打开时的处理代码*/
-            await Task.Delay(10000);
+            //await Task.Delay(10000);
             Frame.Navigate(typeof(Login));
         }
     }
