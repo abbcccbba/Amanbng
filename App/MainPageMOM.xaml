@@ -23,7 +23,7 @@
                 <Grid>
                     <Grid>
                         <MediaElement x:Name="MediaPage" AutoPlay="True" IsLooping="True" Source="ms-appx:///Assets/v6.mp4"/>
-                        <TextBlock HorizontalAlignment="Left" Margin="121,83,0,0" TextWrapping="Wrap" Text="nb tools" FontSize="230" VerticalAlignment="Top" FontFamily="ms-appx:///Assets/Hello.otf#Holland" Foreground="#AAD8E6" Width="626" Height="325" />
+                        <TextBlock HorizontalAlignment="Left" Margin="57,85,0,0" TextWrapping="Wrap" Text="Amanbng" FontSize="230" VerticalAlignment="Top" FontFamily="ms-appx:///Assets/Hello.otf#Holland" Foreground="#AAD8E6" Width="703" Height="325" />
                         <TextBlock x:Name="TT" Text="现在，" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="White" FontSize="28" FontWeight="Bold" Margin="49,127,0,0" Height="45" Width="287" RenderTransformOrigin="0.5,0.5" />
                         <TextBlock x:Name="TM" Text="重新定义“工具箱”" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="White" FontSize="28" FontWeight="Bold" Margin="49,169,0,0" Height="45" Width="358" RenderTransformOrigin="0.5,0.5" />
 
