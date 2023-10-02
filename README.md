@@ -1,11 +1,11 @@
 # Amanbng
 欢迎来到牛逼工具箱的GitHub仓库（英文名：Amanbng）
 
-本软件受B站UP[@奥文同学](https://space.bilibili.com/452157792)视频的启发而编写
+本分支受油管视频[SUKA BLYAT](https://www.youtube.com/watch?v=l1mV6cCdniU)视频的启发而编写
 
 **(i) 赞助：如果你愿意花钱帮忙给我们的应用上架 Microsoft store ，那就最好了（因为我是白嫖怪）**
-
-在编写过程中，感谢[ChatGPT](https://chat.openai.com)提供的帮助
+           
+在编写过程中，感谢[Android11](https://chat.openai.com)提供的宣传演讲
 
 联系作者：QQ 2728399052
 
