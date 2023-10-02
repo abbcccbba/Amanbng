@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Threading.Tasks;
 using Windows.Storage;
 using Windows.UI.ViewManagement;
+using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
 // https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x804 上介绍了“空白页”项模板
@@ -69,10 +71,43 @@ namespace App
 
             ApplicationView.GetForCurrentView().SetPreferredMinSize(new Windows.Foundation.Size(853, 480));
             ApplicationView.GetForCurrentView().TryResizeView(new Windows.Foundation.Size(853, 480));
+            
+
         }
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            Frame.Navigate(typeof(Login));
+            Task.Run(() => { 
+                new AppClasses.PlayM("ms-appx:///Assets//asF/music.mp3").A(); 
+            });
+        }
+
+        private async void Button_Login(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        {
+            TextBox Account = new TextBox() 
+            { 
+                Text = "dingdang@outlook.com"
+                // 默认登入时账号
+            };
+            
+            UIElement[] Kongs =
+            {
+                new TextBlock() {Text = "请输入你的账号"},
+                Account
+            };
+            Kongs = await new AppClasses.MessageBox("继续你的登入").m("下一步", Kongs);
+            if (Account.Text != "dingdang@outlook.com")
+                new AppClasses.MessageBox("错误").e("我们找不到你的账号");
+            else
+            {
+                PasswordBox Password = new PasswordBox() {PasswordChar='#'.ToString() };
+                UIElement[] Kongs_P =
+                {
+                    new TextBlock() {Text = "请输入你的密码" },
+                    Password
+                };
+                Kongs_P = await new AppClasses.MessageBox("继续你的登入").m("下一步", Kongs_P);
+                Frame.Navigate(typeof(MainPageMOM));
+            }
         }
     }
 }

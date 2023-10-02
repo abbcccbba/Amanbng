@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Management;
@@ -34,6 +35,9 @@ namespace App
         {
             MediaPage.Play();
             MediaPage.Stretch = Stretch.UniformToFill;
+        }
+        protected override void OnNavigatedFrom(NavigationEventArgs e)
+        {
         }
         /* 懂得都懂 */
         private void Tp_N1(object sender, TappedRoutedEventArgs e)

@@ -7,9 +7,13 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-    <Grid FocusVisualPrimaryBrush="#FFFFFDFD">
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Center" TextWrapping="Wrap" Text="请稍后" VerticalAlignment="Center" Foreground="Black"/>
-        <ProgressRing x:Name="Mainringing" HorizontalAlignment="Left" Margin="300,230,0,0" VerticalAlignment="Top"/>
+    <Grid FocusVisualPrimaryBrush="#FF0000">
+        <Image HorizontalAlignment="Left" Height="655" VerticalAlignment="Top" Width="473" Source="ms-appx:///Assets//asF/main.jpg" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto" >
 
+        </Image>
+        <TextBlock HorizontalAlignment="Left" Margin="483,10,0,0" TextWrapping="Wrap" Text="牛逼工具箱（苏联特供版）" VerticalAlignment="Top" Foreground="Red" FontSize="30" Width="374"/>
+        <Button Content="登入" Margin="483,81,0,0" VerticalAlignment="Top" Click="Button_Login"/>
+        <Button Content="Windows Hello" Margin="483,118,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.004,-0.635"/>
+        <Button Content="体验内测" Margin="483,155,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Page>

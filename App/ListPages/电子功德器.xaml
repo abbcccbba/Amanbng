@@ -9,6 +9,7 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
+        <Image HorizontalAlignment="Left" Height="272" Margin="10,13,0,0" VerticalAlignment="Top" Width="208" Source="ms-appx:///Assets/asF/MyRed.png"/>
         <Frame x:Name="ReturnFrame" />
         <Image HorizontalAlignment="Center" Height="100" VerticalAlignment="Center" Width="100" Source="ms-appx:///Assets/Yuer.jpg" Tapped="CR" />
         <Button Content="敲击木鱼" Margin="377,295,0,0" VerticalAlignment="Top" Click="GongDe"/>

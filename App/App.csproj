@@ -25,7 +25,7 @@
     <AppxPackageDir>H:\N1\UWP_PUT</AppxPackageDir>
     <GenerateTestArtifacts>True</GenerateTestArtifacts>
     <AppxBundle>Always</AppxBundle>
-    <AppxBundlePlatforms>x86|x64</AppxBundlePlatforms>
+    <AppxBundlePlatforms>x64</AppxBundlePlatforms>
     <AppInstallerUri>H:\N1\UWP_PUT</AppInstallerUri>
     <HoursBetweenUpdateChecks>0</HoursBetweenUpdateChecks>
     <AppxPackageSigningTimestampServerUrl />
@@ -130,6 +130,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="gol.cs" />
     <Compile Include="ListPages\剪刀石头布.xaml.cs">
       <DependentUpon>剪刀石头布.xaml</DependentUpon>
     </Compile>
@@ -150,9 +151,6 @@
     </Compile>
     <Compile Include="ListPages\身高计算器.xaml.cs">
       <DependentUpon>身高计算器.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Login.xaml.cs">
-      <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -218,6 +216,10 @@
     <Content Include="Assets\ApPIconsN2\Wide310x150Logo.scale-150.png" />
     <Content Include="Assets\ApPIconsN2\Wide310x150Logo.scale-200.png" />
     <Content Include="Assets\ApPIconsN2\Wide310x150Logo.scale-400.png" />
+    <Content Include="Assets\asF\main.jpg" />
+    <Content Include="Assets\asF\music.mp3" />
+    <Content Include="Assets\asF\MyRed.png" />
+    <Content Include="Assets\asF\studio.mp4" />
     <Content Include="Assets\NBm.mp3" />
     <Content Include="Assets\iiilab_video_2.mp4" />
     <Content Include="Assets\N1.mp3" />
@@ -266,10 +268,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Login.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -288,6 +286,7 @@
     <None Include="App_TemporaryKey.pfx" />
     <Content Include="Assets\Hello.otf" />
     <Content Include="Assets\sa.ttf" />
+    <Content Include="Assets\asF\Bickham Script Two.ttf" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AppClasses\AppClasses.csproj">
@@ -299,6 +298,7 @@
       <Name>AppRuntime</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

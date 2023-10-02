@@ -9,6 +9,7 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
+        <Image HorizontalAlignment="Left" Height="272" Margin="10,13,0,0" VerticalAlignment="Top" Width="208" Source="ms-appx:///Assets/asF/MyRed.png"/>
         <!--时间查看器--><TextBlock x:Name="N3_MainText" HorizontalAlignment="Left" TextWrapping="Wrap" FontSize="50" Text="时间查看器" VerticalAlignment="Top" Height="65" Width="363" Margin="302,51,0,0"/>
         <!--查看时间--><Button x:Name="N3_MainButt" Content="查看时间" HorizontalAlignment="Center" Height="177" Width="380" Margin="0,213,0,0" VerticalAlignment="Top" Click="ViewTime"/>
         <ComboBox RenderTransformOrigin="0.495,0.63" Margin="652,30,0,0" Width="145" PlaceholderText="语言" SelectionChanged="OpenLanguage">

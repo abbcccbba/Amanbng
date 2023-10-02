@@ -9,6 +9,7 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
+        <Image HorizontalAlignment="Left" Height="272" Margin="10,13,0,0" VerticalAlignment="Top" Width="208" Source="ms-appx:///Assets/asF/MyRed.png"/>
         <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" FontSize="50" Text="字符拼接器" VerticalAlignment="Top" Height="65" Width="261" Margin="302,51,0,0"/>
         <TextBox x:Name="x1" HorizontalAlignment="Left" Margin="107,148,0,0" TextWrapping="Wrap" Text="字段1" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" Margin="203,155,0,0" TextWrapping="Wrap" Text="+" VerticalAlignment="Top"/>

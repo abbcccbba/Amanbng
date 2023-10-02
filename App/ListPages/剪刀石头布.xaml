@@ -9,6 +9,7 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
+        <Image HorizontalAlignment="Left" Height="272" Margin="10,13,0,0" VerticalAlignment="Top" Width="208" Source="ms-appx:///Assets/asF/MyRed.png"/>
         <!-- 定义了一些用户可以选择的按钮 -->
         <Button x:Name="x1" Content="选择剪刀" Margin="206,409,0,0" VerticalAlignment="Top" Click="Set_JianDao"/>
         <Button x:Name="x2" Content="选择石头" Margin="383,409,0,0" VerticalAlignment="Top" Click="Set_ShiTou"/>

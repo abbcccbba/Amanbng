@@ -12,5 +12,6 @@
         <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" FontSize="50" Text="超级读卡器" VerticalAlignment="Top" Height="65" Width="261" Margin="302,51,0,0"/>
         <Button Content="将卡片放在按钮上面后点击开始读卡" HorizontalAlignment="Center" Height="177" Width="380" Click="start"/>
         <TextBlock x:Name="ShowKa" HorizontalAlignment="Left" Margin="407,33,0,0" TextWrapping="Wrap" FontSize="17" Text="   dú       kā      qì" VerticalAlignment="Top" RenderTransformOrigin="0.576,-0.238" Height="20" Width="144"/>
+        <Image HorizontalAlignment="Left" Height="272" Margin="10,13,0,0" VerticalAlignment="Top" Width="208" Source="ms-appx:///Assets/asF/MyRed.png"/>
     </Grid>
 </Page>

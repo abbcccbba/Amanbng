@@ -9,23 +9,28 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <NavigationView x:Name="CBL"  IsSettingsVisible="False" Background="Black" >
+        <NavigationView x:Name="CBL"  IsSettingsVisible="False" Background="Red" >
             <NavigationView.MenuItems>
                 <NavigationViewItem Icon="PreviewLink" Content="超级读卡器" Tapped="Tp_N1" />
                 <NavigationViewItem Icon="Contact" Content="身高计算器" Tapped="Tp_N2" />
-                <NavigationViewItem Icon="Clock" Content="时间查看器" Tapped="Tp_N3" />
-                <NavigationViewItem Icon="CellPhone" Content="手机定位器" Tapped="Tp_N4" />
+                <NavigationViewItem Icon="Clock" Content="事件查看器" Tapped="Tp_N3" />
+                <NavigationViewItem Icon="CellPhone" Content="希特勒定位器" Tapped="Tp_N4" />
                 <NavigationViewItem Icon="Link" Content="字符拼接器" Tapped="Tp_N5"  />
                 <NavigationViewItem Icon="WebCam" Content="剪刀石头布" Tapped="Tp_N6" />
-                <NavigationViewItem Icon="AddFriend" Content="电子功德器" Tapped="Tp_N7" />
+                <NavigationViewItem Icon="AddFriend" Content="电子德减器" Tapped="Tp_N7" />
             </NavigationView.MenuItems>
             <Frame x:Name="ContentFrame">
                 <Grid>
                     <Grid>
-                        <MediaElement x:Name="MediaPage" AutoPlay="True" IsLooping="True" Source="ms-appx:///Assets/v6.mp4"/>
-                        <TextBlock HorizontalAlignment="Left" Margin="57,85,0,0" TextWrapping="Wrap" Text="Amanbng" FontSize="230" VerticalAlignment="Top" FontFamily="ms-appx:///Assets/Hello.otf#Holland" Foreground="#AAD8E6" Width="703" Height="325" />
-                        <TextBlock x:Name="TT" Text="现在，" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="White" FontSize="28" FontWeight="Bold" Margin="49,127,0,0" Height="45" Width="287" RenderTransformOrigin="0.5,0.5" />
-                        <TextBlock x:Name="TM" Text="重新定义“工具箱”" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="White" FontSize="28" FontWeight="Bold" Margin="49,169,0,0" Height="45" Width="358" RenderTransformOrigin="0.5,0.5" />
+                        <MediaElement x:Name="MediaPage" AutoPlay="True" IsLooping="True" Source="ms-appx:///Assets/asF/studio.mp4"/>
+                        <TextBlock HorizontalAlignment="Right" Margin="0,-54,161,0" TextWrapping="Wrap" Text="острый" FontSize="230" VerticalAlignment="Top" FontFamily="ms-appx:///Assets/asF/Bickham Script Two.ttf#Bickham Script Two" Foreground="#FF9A2F51" Width="598" Height="488" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto" >
+                            <TextBlock.RenderTransform>
+                                <CompositeTransform Rotation="-8.131"/>
+                            </TextBlock.RenderTransform>
+                        </TextBlock>
+                        <TextBlock Text="为，" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="White" FontSize="28" FontWeight="Bold" Margin="49,127,0,0" Height="45" Width="287" RenderTransformOrigin="0.5,0.5" />
+                        <TextBlock Text="伟大的革命先烈点赞！" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="White" FontSize="28" FontWeight="Bold" Margin="49,169,0,0" Height="45" Width="358" RenderTransformOrigin="0.5,0.5" />
+                        <TextBlock Text="—— Amanbng Developer" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="White" FontSize="28" FontWeight="Bold" Margin="49,211,0,0" Height="45" Width="358" RenderTransformOrigin="0.5,0.5" />
 
                     </Grid>
                 </Grid>
@@ -33,4 +38,3 @@
         </NavigationView>
     </Grid>
 </Page>
-
